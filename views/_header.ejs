@@ -1,0 +1,21 @@
+<header>
+  <% if (locals.user) { %>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><i class="fa-solid fa-graduation-cap"></i> Placement Cell</a>
+      <form class="d-flex px-4">
+        <a class="navbar-brand p-2" href="/company/home"><i class="fa-solid fa-building-columns"></i></i> Company List</a>
+        <a class="navbar-brand p-2" href="/users/download-csv"
+          ><i class="fa-solid fa-download"></i> Download Report</a
+        >
+        <button class="navbar-brand p-2" style="border: 3px solid #D3D3D3; border-radius: 10px;"><i class="fa-solid fa-user"></i> <%=locals.user.name%></button>
+        <button type="submit" class="btn btn-danger btn-block fs-5">
+          <a href="/users/signout" style="color: #fff; text-decoration: none"
+            >Sign out</a
+          >
+        </button>
+      </form>
+    </div>
+  </nav>
+  <% } %>
+</header>

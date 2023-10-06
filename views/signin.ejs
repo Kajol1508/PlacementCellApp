@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('_bootstrap_meta')%>
+
+		<title>Sign In</title>
+	</head>
+	<body style="background: #D3CCE3;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	height: 100vh;">
+		<%- include('_header')%>
+		<nav class="navbar navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="/"><i class="fa-solid fa-graduation-cap"></i>Placement Cell</a>
+			</div>
+		</nav>
+		<div
+			class="w-40 mx-auto mt-5"
+			style="
+				height: 70vh;
+				display: grid;
+				place-content: center;
+				width: 600px;
+				background-color: rgba(255, 255, 255,0.2);
+				padding: 60px;
+				color:#000000;
+				border-radius: 25px;
+				border: solid 2px transparent;
+				background-clip: padding-box;
+				box-shadow: 10px 10px 10px  rgba(46, 54, 68, 0.03);
+				backdrop-filter: blur(40px);
+			"
+		>
+			<div class="mx-auto mt-3 mb-3" style="width: 90px">
+				<h4>Sign In</h4>
+			</div>
+
+			<form action="/users/create-session" method="POST" style="width: 300px">
+				<!-- Email input -->
+				<div class="form-outline mb-4">
+					<label class="form-label" for="email">Enter Email</label>
+					<input type="email" class="form-control" id="email" placeholder="Xyz@email.com" name="email" required />
+				</div>
+
+				<!-- Password input -->
+				<div class="form-outline mb-4">
+					<label class="form-label" for="password">Enter Password</label>
+					<input type="password" id="password" class="form-control" name="password" required />
+				</div>
+
+				<!-- Submit button -->
+				<button type="submit" class="btn btn-success btn-block mb-4">Sign In</button>
+
+				<!-- Register buttons -->
+				<div class="text-center">
+					<p>Don't have an account?<a href="/users/signup"> SignUp </a></p>
+				</div>
+			</form>
+		</div>
+		<%- include('_bootstrap_script')%>
+	</body>
+</html>

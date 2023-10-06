@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('_bootstrap_meta')%>
+    <link rel="stylesheet" href="/css/interview.css">
+    <title>Schedule Interview</title>
+  </head>
+  <body style="background: #D3CCE3;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	height: 100vh;">
+    <%- include('_header') %>
+<div class="container">
+  <form
+  class="w-50 mx-auto mt-4" action="/company/schedule-interview" method="post" 
+  style="
+        height: 80vh; 
+        display: grid; 
+        place-content: center; 
+				background-color: rgba(255, 255, 255,0.2);
+				padding: 60px;
+				color:#000000;
+				border-radius: 25px;
+				border: solid 2px transparent;
+				background-clip: padding-box;
+				box-shadow: 10px 10px 10px  rgba(46, 54, 68, 0.03);
+				backdrop-filter: blur(40px);
+  ">
+  <h3 style="margin-bottom: 30px;
+  color: black;">Schedule Interview</h3>
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <select class="form-select" aria-label="Default select example" name="id" id="name">
+    <option selected disabled>Select Student</option>
+
+    <%for(let student of students){%>
+    <option value="<%=student.id%>"><%= student.name %></option>
+    <%}%>
+  </select></select>
+  </div>
+
+  <div class="mb-3">
+    <label for="company" class="form-label">Company</label>
+    <input type="text" class="form-control" id="company" name="company"/>
+  </div>
+
+  <div class="mb-3">
+    <label for="date" class="form-label">Date</label>
+    <input type="date" class="form-control" id="date" name="date" />
+  </div>
+
+      <button class="btn btn-success align-self-center mt-3">
+        Schedule Interview
+      </button>
+</form>
+</div>
+    
+    <%- include('_bootstrap_script')%>
+  </body>
+</html>
